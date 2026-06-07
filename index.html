@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="高涵，中山大学应用经济学博士，即将加入中山大学岭南学院做科研博士后，研究方向包括公共经济学、城市经济学、土地财政、土地配置与数字方法。">
+    <meta name="theme-color" content="#183f4e">
+    <meta property="og:title" content="高涵 - 经济学研究者">
+    <meta property="og:description" content="公共经济学、城市经济学、土地财政与数字方法。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/hero-bg.jpg">
     <title>高涵 - 经济学研究者</title>
+    <link rel="preload" href="assets/hero-bg.jpg" as="image">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
+    <a href="#main" class="skip-link">跳转到主要内容</a>
+
+    <nav class="navbar" aria-label="主导航">
         <div class="nav-container">
-            <a href="#home" class="logo">高涵<span class="logo-econ">Econ</span></a>
-            <ul class="nav-links">
+            <a href="#home" class="logo" aria-label="高涵主页">高涵<span class="logo-econ">Econ</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="site-nav">
                 <li><a href="#about">关于</a></li>
                 <li><a href="#research">研究</a></li>
                 <li><a href="#publications">论文</a></li>
@@ -26,363 +39,410 @@
         </div>
     </nav>
 
-    <!-- 首页/关于 -->
-    <section id="home" class="hero">
+    <header id="home" class="hero">
         <div class="hero-content">
+            <p class="hero-kicker">公共经济学 · 城市经济学 · 土地财政</p>
             <div class="avatar">
-                <img src="IMG_7883.JPG" alt="高涵" class="avatar-photo">
+                <img src="assets/avatar.jpg" alt="高涵头像" class="avatar-photo" width="390" height="520" decoding="async" fetchpriority="high">
             </div>
             <h1>高涵</h1>
-            <p class="title">博士研究生</p>
-            <p class="affiliation">中山大学 应用经济学</p>
-            <div class="hero-decoration">
-                <span class="dot"></span>
-                <span class="line"></span>
-                <span class="dot"></span>
+            <p class="title">中山大学应用经济学博士</p>
+            <p class="affiliation">即将加入中山大学岭南学院做科研博士后，关注财税体制改革、地方政府行为与城市土地配置。</p>
+            <div class="hero-actions" aria-label="主要操作">
+                <a href="#publications" class="btn btn-primary">查看研究</a>
+                <a href="高涵简历最新版.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">下载简历</a>
+                <a href="mailto:gaoh59@mail2.sysu.edu.cn" class="btn btn-secondary">邮件联系</a>
             </div>
-            <p class="intro">
-                专注于公共经济学与城市经济学<br>
-                探索财税体制改革、地方政府行为与城市土地配置
-            </p>
-            <a href="#about" class="btn">了解更多</a>
+            <ul class="hero-highlights" aria-label="研究概览">
+                <li>
+                    <strong>Public Finance</strong>
+                    <span>税制改革与地方政府行为</span>
+                </li>
+                <li>
+                    <strong>Urban Economics</strong>
+                    <span>土地配置、城市空间与公共服务</span>
+                </li>
+                <li>
+                    <strong>Digital Methods</strong>
+                    <span>文本分析与 AI/LLM 研究方法</span>
+                </li>
+            </ul>
         </div>
-        <div class="scroll-indicator">
-            <span>向下滚动</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+    </header>
 
-    <!-- 关于我 -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>我来自湖北荆州，江河湖泊环绕的平原小镇。</p>
-                    <p>学习与工作之余，我喜欢逛展、拍照、打羽毛球、看电影和阅读。我是一个喜欢吃麦当劳、收集哆啦A梦玩具的文青。</p>
-                    <p>我是中山大学国际金融学院的博士研究生，师从<strong>张莉教授</strong>，研究方向为公共经济学与城市经济学。</p>
-                    <p>我的研究兴趣包括：</p>
-                    <ul class="interest-list">
-                        <li>公共经济学：财税体制改革、地方政府行为</li>
-                        <li>城市经济学：土地配置与土地利用、集聚经济</li>
-                        <li>文本分析：土地挂牌与拍卖出让公告和成交公告中的文本信息及其经济学含义</li>
-                        <li>数字方法：AI/LLM在经济学研究中的应用</li>
-                    </ul>
-                    <p class="xiaohongshu-intro">我也喜欢在<strong>小红书</strong>分享我对学术科研的思考与感悟。</p>
+    <main id="main">
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">About</p>
+                    <h2 class="section-title">关于我</h2>
                 </div>
-                <div class="about-card">
-                    <h3>教育背景</h3>
-                    <div class="edu-item">
-                        <span class="year">2022 - 2026（预期）</span>
-                        <span class="degree">博士研究生</span>
-                        <span class="school">中山大学 · 应用经济学</span>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>我即将加入中山大学岭南学院做科研博士后，研究方向为公共经济学与城市经济学。</p>
+                        <p>我来自湖北荆州，江河湖泊环绕的平原小镇。学习与工作之余，我喜欢逛展、拍照、打羽毛球、看电影和阅读，也会在小红书分享对学术科研的思考与感悟。</p>
+                        <p>我的研究兴趣集中在地方财政激励、城市土地治理和非结构化文本数据的经济学应用。</p>
+                        <ul class="interest-list">
+                            <li>公共经济学：财税体制改革、地方政府行为</li>
+                            <li>城市经济学：土地配置与土地利用、集聚经济</li>
+                            <li>文本分析：土地挂牌、拍卖出让公告和成交公告中的文本信息</li>
+                            <li>数字方法：AI/LLM 在经济学研究中的应用</li>
+                        </ul>
                     </div>
-                    <div class="edu-item">
-                        <span class="year">2020 - 2022</span>
-                        <span class="degree">硕士研究生</span>
-                        <span class="school">广东外语外贸大学 · 国际商务</span>
-                    </div>
-                    <div class="edu-item">
-                        <span class="year">2016 - 2020</span>
-                        <span class="degree">本科</span>
-                        <span class="school">广东外语外贸大学 · 创新班-经济学与英语文学双学位</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 研究方向 -->
-    <section id="research" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">研究领域</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon">💰</div>
-                    <h3>公共经济学</h3>
-                    <p>关注财税体制改革、地方政府行为等话题</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">🏙️</div>
-                    <h3>城市经济学</h3>
-                    <p>关注城市中的土地配置与土地利用、集聚经济等话题</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">📝</div>
-                    <h3>文本分析</h3>
-                    <p>现阶段尤其关心土地挂牌与拍卖的出让公告和成交公告中的文本信息及其可能的经济学含义</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">🤖</div>
-                    <h3>数字方法</h3>
-                    <p>探索生成式AI与大语言模型在经济学研究中的应用，处理政策文本、新闻公告等非结构化数据</p>
+                    <aside class="profile-card" aria-label="教育背景">
+                        <h3>教育背景</h3>
+                        <div class="edu-item">
+                            <span class="year">2022 - 2026</span>
+                            <span class="degree">经济学博士</span>
+                            <span class="school">中山大学 · 应用经济学</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="year">2020 - 2022</span>
+                            <span class="degree">硕士研究生</span>
+                            <span class="school">广东外语外贸大学 · 国际商务</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="year">2016 - 2020</span>
+                            <span class="degree">本科</span>
+                            <span class="school">广东外语外贸大学 · 创新班-经济学与英语文学双学位</span>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 发表论文 -->
-    <section id="publications" class="section">
-        <div class="container">
-            <h2 class="section-title">学术论文</h2>
-
-            <h3 class="subsection-title">已发表论文</h3>
-            <div class="publications-list">
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-content">
-                        <h3>产业多样性与城市风险抵御能力</h3>
-                        <p class="pub-authors">李世刚、张梦悦、<strong>高涵</strong></p>
-                        <p class="pub-journal">《财经问题研究》第2期</p>
-                    </div>
+        <section id="research" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Research</p>
+                    <h2 class="section-title">研究领域</h2>
                 </div>
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-content">
-                        <h3>关于优化城乡建设用地增减挂钩结余指标跨区域流转的建议</h3>
-                        <p class="pub-authors">张莉、黄伟、<strong>高涵</strong>、韩立彬</p>
-                        <p class="pub-journal">《南方智库》决策参考第1期</p>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-content">
-                        <h3>土地市场降温、财政支出结构变动与地方公共服务水平</h3>
-                        <p class="pub-authors">张莉、童一舟、<strong>高涵</strong>*（通讯作者）</p>
-                        <p class="pub-journal">《财经问题研究》第11期</p>
-                    </div>
+                <div class="research-grid">
+                    <article class="research-card reveal">
+                        <span class="research-mark">01</span>
+                        <h3>公共经济学</h3>
+                        <p>关注财税体制改革、财政压力与地方政府在土地市场中的行为选择。</p>
+                    </article>
+                    <article class="research-card reveal">
+                        <span class="research-mark">02</span>
+                        <h3>城市经济学</h3>
+                        <p>研究城市土地配置、土地利用、公共服务供给与空间结构对经济活动的影响。</p>
+                    </article>
+                    <article class="research-card reveal">
+                        <span class="research-mark">03</span>
+                        <h3>文本分析</h3>
+                        <p>从土地挂牌、拍卖出让公告和成交公告中提取政策、合同与交易信息。</p>
+                    </article>
+                    <article class="research-card reveal">
+                        <span class="research-mark">04</span>
+                        <h3>数字方法</h3>
+                        <p>探索生成式 AI 与大语言模型在政策文本、新闻公告等非结构化数据中的应用。</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <h3 class="subsection-title">工作论文与进展中研究</h3>
-            <div class="publications-list working-papers">
-                <div class="pub-item">
-                    <span class="pub-year">在审</span>
-                    <div class="pub-content">
-                        <h3>围绕电商平台的产业链：线上加强线下集聚的证据</h3>
-                        <p class="pub-authors">合作者：张莉，陈强远</p>
-                        <p class="pub-journal">《管理世界》已录用</p>
-                        <p class="pub-abstract"><strong>摘要：</strong>链主型电商平台如何重塑传统产业链？本文以全球领先的跨境电商平台希音（SHEIN）为例，通过深入的实地调研，并结合中国工商企业注册、广东省纺织服装行业汇算清缴以及企业业务工序文本等多维微观大数据，考察了链主型平台入驻对周边产业链集聚与韧性的影响。研究发现：SHEIN的入驻显著加强了纺织服装企业在地理空间上的集聚，并呈现出影响随距离远近衰减，证明了数字时代地理邻近性在支撑"小单快反"模式中的重要性。在外部贸易冲击下，链主型平台通过强化产业链垂直分工、促进知识溢出及增强市场波动抵御能力，显著提升了周边企业的经营绩效与产业链韧性。</p>
-                        <p class="pub-keywords"><strong>关键词：</strong>独角兽企业；SHEIN；集聚效应；跨境电商平台；链主企业</p>
-                    </div>
+        <section id="publications" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Papers</p>
+                    <h2 class="section-title">学术论文</h2>
                 </div>
-                <div class="pub-item">
-                    <span class="pub-year">在审</span>
-                    <div class="pub-content">
-                        <h3>税制改革与以地谋发展模式转型：供需分析和政策优化</h3>
-                        <p class="pub-authors">合作者：张莉，杨海生</p>
-                        <p class="pub-journal">《统计研究》第三轮R&R 修回</p>
-                        <p class="pub-abstract"><strong>内容提要：</strong>当前，新一轮财税体制改革意义重大，重塑地方政府的以地谋发展行为和激发市场主体的高质量发展迫在眉睫。"营改增"是我国财税体制现代化的重大改革，本文以"营改增"政策为准自然实验，基于土地市场网2010年至2016年的微观土地出让信息和匹配了地块的税收调查数据，实证检验了此改革如何影响产业用地市场的供需双方，以及基于机器学习方法提出政策优化具体方向。结果表明，相比其他城市，试点城市在政策推行后工业用地的出让面积显著减少了10%，交易规模下降7%，实际单价上升5%，且效应在建设用地指标约束较强的城市中更为突出，在与服务业关联更紧密的行业以及质量较好的高等级地块更为明显。进一步地，采用因果路径分析考察了"财政激励效应"和"需求冲击效应"及二者的相对重要性，发现"营改增"使得制造业实际增值税率下降，这对政府而言是负向的财政激励，进而减少了出让工业用地培育增值税税源的动机；而在需求侧，这一税制改革使得制造业企业资源配置更合理，放缓了粗放式购置土地扩张厂房的动机，因此最终工业用地交易规模减少。最后，基于市场均衡处理效应框架的分析表明，工业用地的市场化交易与集约节约利用仍是未来改革的重点。本文的研究结论能为后续深化财税体制现代化改革以及城市土地配置发展目标提供优化方向。</p>
-                        <p class="pub-keywords"><strong>关键词：</strong>税制改革；营改增；工业用地；因果路径分析；市场均衡下的处理效应</p>
-                    </div>
+
+                <h3 class="subsection-title">已发表论文</h3>
+                <div class="publications-list">
+                    <article class="pub-item reveal">
+                        <span class="pub-year">2026</span>
+                        <div class="pub-content">
+                            <h3>围绕电商平台的产业链：线上加强线下集聚的证据</h3>
+                            <p class="pub-authors">张莉、<strong>高涵</strong>*（通讯作者）、陈强远</p>
+                            <p class="pub-journal">《管理世界》待刊</p>
+                            <details class="pub-details">
+                                <summary>摘要与关键词</summary>
+                                <p class="pub-abstract"><strong>摘要：</strong>链主型电商平台如何重塑传统产业链？本文以全球领先的跨境电商平台希音（SHEIN）为例，通过深入的实地调研，并结合中国工商企业注册、广东省纺织服装行业汇算清缴以及企业业务工序文本等多维微观大数据，考察了链主型平台入驻对周边产业链集聚与韧性的影响。研究发现：SHEIN 的入驻显著加强了纺织服装企业在地理空间上的集聚，并呈现出影响随距离远近衰减，证明了数字时代地理邻近性在支撑“小单快反”模式中的重要性。在外部贸易冲击下，链主型平台通过强化产业链垂直分工、促进知识溢出及增强市场波动抵御能力，显著提升了周边企业的经营绩效与产业链韧性。</p>
+                                <p class="pub-keywords"><strong>关键词：</strong>独角兽企业；SHEIN；集聚效应；跨境电商平台；链主企业</p>
+                            </details>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">2025</span>
+                        <div class="pub-content">
+                            <h3>产业多样性与城市风险抵御能力</h3>
+                            <p class="pub-authors">李世刚、张梦悦、<strong>高涵</strong></p>
+                            <p class="pub-journal">《财经问题研究》第2期</p>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">2025</span>
+                        <div class="pub-content">
+                            <h3>关于优化城乡建设用地增减挂钩结余指标跨区域流转的建议</h3>
+                            <p class="pub-authors">张莉、黄伟、<strong>高涵</strong>、韩立彬</p>
+                            <p class="pub-journal">《南方智库》决策参考第1期</p>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">2025</span>
+                        <div class="pub-content">
+                            <h3>土地市场降温、财政支出结构变动与地方公共服务水平</h3>
+                            <p class="pub-authors">张莉、童一舟、<strong>高涵</strong>*（通讯作者）</p>
+                            <p class="pub-journal">《财经问题研究》第11期</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="pub-item">
-                    <span class="pub-year">投稿中</span>
-                    <div class="pub-content">
-                        <h3>财政压力与地方政府住宅用地规模选择：开源和节流的双重视角</h3>
-                        <p class="pub-authors">合作者：张莉，黎婉玉</p>
-                        <p class="pub-abstract"><strong>内容提要：</strong>本文分析了财政压力对中国住宅用地"大地块"供给格局的影响，并揭示财政体制变革下地方政府土地治理的行为逻辑。以"营改增"为背景，研究发现在财政压力显著加剧时，地方政府往往通过扩大住宅地块单宗出让面积和强化地块溢价实现"开源"，同时有动机采用土地合同配建等方式将部分公共服务责任转嫁给市场主体，实现"节流"。2016年全面"营改增"后，出让大面积地块的数量和比例显著上升，住宅地价整体走高，特别是在竞争性拍卖模式下尤为明显。与此同时，上述模式强化了公共设施用地在"大地块"周围的集聚，削弱了城市公共资源的均衡分配。研究建议健全财税改革后的动态监测和绩效反馈机制，完善转移支付制度，统筹推进高质量城市空间治理与住房品质提升，实现财税稳定、土地有序供应与公共服务均等化。</p>
-                        <p class="pub-keywords"><strong>关键词：</strong>住宅用地；大地块；财税改革；营改增</p>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">进行中</span>
-                    <div class="pub-content">
-                        <h3>高质量发展目标下的公共服务：路径选择与机制分析</h3>
-                        <p class="pub-authors">合作者：张莉，杨海生</p>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">进行中</span>
-                    <div class="pub-content">
-                        <h3>Keeping Up with the Peers: The Race to the Bottom in Local Land Subsidies</h3>
-                        <p class="pub-authors">Coauthored with: ZHANG Li, YANG Haisheng</p>
-                        <p class="pub-abstract"><strong>Abstract: </strong>While there is a consensus that widespread competition exists among local governments within multi-layered large economies, the specific mechanisms of how this competition unfolds remain debated. Existing literature has predominantly focused on the instruments of competition rather than the process and its market implications. This paper investigates the behavioral logic and dynamic processes of local governments from a social interaction perspective, focusing on low-price subsidies for industrial land. Using tax survey data matched with micro-level industrial land transaction records, we explore the origins of the "race to the bottom" in land prices. We find that local government decisions regarding industrial land supply are not based solely on local factor endowments; rather, governments exhibit strong peer effects, mimicking and following the decisions of "peer" cities, often converging toward those offering the highest subsidies. Further analysis reveals that this behavioral response is more sensitive in key industries and high-tech sectors identified in planning documents, indicating significant industrial heterogeneity. Sub-sample analyses based on economic development levels and official turnover show that homogenous competition among local governments is complex, involving both imitative behavior and strategic adjustments driven by economic status and political cycles. Finally, we examine the economic consequences and find that this mimetic behavior distorts land supply without effectively enhancing firm productivity or promoting innovation.</p>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">进行中</span>
-                    <div class="pub-content">
-                        <h3>Pains or Gains: The Spillover Effects of Superland in China</h3>
-                        <p class="pub-authors">Coauthored with: ZHANG Li, LV Jinyi</p>
-                        <p class="pub-abstract"><strong>Abstract: </strong>In the strategic context of mitigating external shocks and comprehensively expanding domestic demand, innovating and broadening physical consumption spaces has emerged as a crucial lever for facilitating the national economic cycle. However, the widespread development model of "mega-parcels" and gated communities—historically driven by rapid urbanization—has fundamentally constrained the effective release of consumption potential at the micro-level. This paper constructs a spatial general equilibrium model incorporating parcel characteristics. Exploiting a quasi-natural experiment generated by the 2009 residential land-use regulations and combining multi-source geospatial with micro-level POI data, we systematically identify the causal effects of super-large residential parcels on the local commercial ecosystem. The findings reveal that mega-parcels significantly suppress both the quantity and diversity of surrounding consumption amenities. The "barrier effect" of severing micro-level street networks heavily outweighs the "agglomeration effect" of population inflow. Our conclusions suggest that effectively boosting domestic demand urgently requires a shift away from the extensive land supply logic. As cities transition into an era of urban renewal and quality enhancement, policymakers must remain highly vigilant regarding spatial mismatch risks in lower-tier cities. Breaking down physical "islands" through refined governance—featuring smaller block sizes and denser street networks—will provide robust institutional and physical support for stimulating micro-commercial vitality and expanding high-quality consumption spaces.</p>
-                        <p class="pub-keywords"><strong>Key Words: </strong>Land Development; Parcel Size; Spatial Equilibrium; Consumption Amenities</p>
-                    </div>
+
+                <h3 class="subsection-title">工作论文与进展中研究</h3>
+                <div class="publications-list working-papers">
+                    <article class="pub-item reveal">
+                        <span class="pub-year">终审</span>
+                        <div class="pub-content">
+                            <h3>税制改革与以地谋发展模式转型：供需分析和政策优化</h3>
+                            <p class="pub-authors">合作者：张莉，杨海生</p>
+                            <p class="pub-journal">《统计研究》终审</p>
+                            <details class="pub-details">
+                                <summary>摘要与关键词</summary>
+                                <p class="pub-abstract"><strong>内容提要：</strong>当前，新一轮财税体制改革意义重大，重塑地方政府的以地谋发展行为和激发市场主体的高质量发展迫在眉睫。“营改增”是我国财税体制现代化的重大改革，本文以“营改增”政策为准自然实验，基于土地市场网 2010 年至 2016 年的微观土地出让信息和匹配了地块的税收调查数据，实证检验了此改革如何影响产业用地市场的供需双方，以及基于机器学习方法提出政策优化具体方向。结果表明，相比其他城市，试点城市在政策推行后工业用地的出让面积显著减少了 10%，交易规模下降 7%，实际单价上升 5%，且效应在建设用地指标约束较强的城市中更为突出，在与服务业关联更紧密的行业以及质量较好的高等级地块更为明显。进一步地，采用因果路径分析考察了“财政激励效应”和“需求冲击效应”及二者的相对重要性，发现“营改增”使得制造业实际增值税率下降，这对政府而言是负向的财政激励，进而减少了出让工业用地培育增值税税源的动机；而在需求侧，这一税制改革使得制造业企业资源配置更合理，放缓了粗放式购置土地扩张厂房的动机，因此最终工业用地交易规模减少。最后，基于市场均衡处理效应框架的分析表明，工业用地的市场化交易与集约节约利用仍是未来改革的重点。本文的研究结论能为后续深化财税体制现代化改革以及城市土地配置发展目标提供优化方向。</p>
+                                <p class="pub-keywords"><strong>关键词：</strong>税制改革；营改增；工业用地；因果路径分析；市场均衡下的处理效应</p>
+                            </details>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">审稿中</span>
+                        <div class="pub-content">
+                            <h3>城市空间结构的微观基础：地块规模与本地消费活力</h3>
+                            <p class="pub-authors">合作者：张莉，吕谨伊</p>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">已投稿</span>
+                        <div class="pub-content">
+                            <h3>大地块的财政激励：开源与节流的双重视角</h3>
+                            <p class="pub-authors">合作者：张莉，黎婉玉</p>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">进行中</span>
+                        <div class="pub-content">
+                            <h3>地理距离作为处理变量的因果推断：理论基础、方法前沿与实践规范</h3>
+                            <details class="pub-details">
+                                <summary>摘要与关键词</summary>
+                                <p class="pub-abstract"><strong>摘要：</strong>随着地理编码（geocoded）微观数据的普及，以“到某一地点的地理距离”界定处理状态、考察其对邻近单元影响的研究设计，在经济学经验研究中日益普遍，广泛应用于污染、交通、城市更新、产业集群与企业区位等议题。然而，如何依据距离合理界定处理组与控制组、距离效应的理论基础何在，相关方法仍缺乏系统梳理。本文以潜在结果框架与“基于设计”（design-based）的研究范式为统一基础，澄清“空间处理”的概念内涵与识别假设，系统梳理距离缓冲区、环形法、距离梯度、空间双重差分、邻里固定效应与处理分配建模等主流方法，并结合蒙特卡洛模拟与图示介绍非参数处理效应曲线估计、反事实候选地点的机器学习构造、基于设计的标准误等前沿进展。在此基础上，本文给出一套可操作的“标准化操作流程”与“可行性检验”清单，回顾权威中英文期刊的应用实践，剖析处理环与控制环设定任意、控制组溢出污染与不可比、对照组构造不当、空间相关推断失当等常见误区，并提出相应的解决方案，以期为相关经验研究提供方法论参考。</p>
+                                <p class="pub-keywords"><strong>关键词：</strong>地理距离；空间处理变量；因果推断；空间双重差分；环形法</p>
+                            </details>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">进行中</span>
+                        <div class="pub-content">
+                            <h3>高质量发展目标下的公共服务：路径选择与机制分析</h3>
+                            <p class="pub-authors">合作者：张莉，杨海生</p>
+                        </div>
+                    </article>
+                    <article class="pub-item reveal">
+                        <span class="pub-year">进行中</span>
+                        <div class="pub-content">
+                            <h3>Keeping Up with the Peers: The Race to the Bottom in Local Land Subsidies</h3>
+                            <p class="pub-authors">Coauthored with: ZHANG Li, YANG Haisheng</p>
+                            <details class="pub-details">
+                                <summary>Abstract</summary>
+                                <p class="pub-abstract"><strong>Abstract: </strong>While there is a consensus that widespread competition exists among local governments within multi-layered large economies, the specific mechanisms of how this competition unfolds remain debated. Existing literature has predominantly focused on the instruments of competition rather than the process and its market implications. This paper investigates the behavioral logic and dynamic processes of local governments from a social interaction perspective, focusing on low-price subsidies for industrial land. Using tax survey data matched with micro-level industrial land transaction records, we explore the origins of the “race to the bottom” in land prices. We find that local government decisions regarding industrial land supply are not based solely on local factor endowments; rather, governments exhibit strong peer effects, mimicking and following the decisions of peer cities, often converging toward those offering the highest subsidies. Further analysis reveals that this behavioral response is more sensitive in key industries and high-tech sectors identified in planning documents, indicating significant industrial heterogeneity. Sub-sample analyses based on economic development levels and official turnover show that homogenous competition among local governments is complex, involving both imitative behavior and strategic adjustments driven by economic status and political cycles. Finally, we examine the economic consequences and find that this mimetic behavior distorts land supply without effectively enhancing firm productivity or promoting innovation.</p>
+                            </details>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 科研项目 -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">参与项目课题</h2>
-            <div class="projects-list">
-                <div class="project-item">
-                    <div class="project-type">参与</div>
-                    <h3>用电大数据看城市经济活力</h3>
-                    <p>南方电网 · 2025年12月-至今</p>
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Projects</p>
+                    <h2 class="section-title">参与项目课题</h2>
                 </div>
-                <div class="project-item">
-                    <div class="project-type">参与</div>
-                    <h3>广东省十五五期间优化区域经济布局研究</h3>
-                    <p>中共广东省委政研室 · 2025年6月-11月</p>
-                </div>
-                <div class="project-item">
-                    <div class="project-type">参与</div>
-                    <h3>全球南方视角下印度之东盟政策演变的跨学科研究</h3>
-                    <p>中山大学研究生教育创新计划 · 2025年5月-至今</p>
-                </div>
-                <div class="project-item">
-                    <div class="project-type">参与</div>
-                    <h3>城中村改造相关财税政策及其影响研究</h3>
-                    <p>广东省财政厅财政科研课题 · 2024年6月</p>
-                </div>
-                <div class="project-item">
-                    <div class="project-type">参与</div>
-                    <h3>再造康鹭：广州最大的纺织产业片区如何转型升级</h3>
-                    <p>中国专业学位案例中心 · 2023年12月</p>
+                <div class="projects-list">
+                    <article class="project-item reveal">
+                        <div class="project-type">参与</div>
+                        <h3>用电大数据看城市经济活力</h3>
+                        <p>南方电网 · 2025 年 12 月 - 至今</p>
+                    </article>
+                    <article class="project-item reveal">
+                        <div class="project-type">参与</div>
+                        <h3>广东省十五五期间优化区域经济布局研究</h3>
+                        <p>中共广东省委政研室 · 2025 年 6 月 - 11 月</p>
+                    </article>
+                    <article class="project-item reveal">
+                        <div class="project-type">参与</div>
+                        <h3>全球南方视角下印度之东盟政策演变的跨学科研究</h3>
+                        <p>中山大学研究生教育创新计划 · 2025 年 5 月 - 至今</p>
+                    </article>
+                    <article class="project-item reveal">
+                        <div class="project-type">参与</div>
+                        <h3>城中村改造相关财税政策及其影响研究</h3>
+                        <p>广东省财政厅财政科研课题 · 2024 年 6 月</p>
+                    </article>
+                    <article class="project-item reveal">
+                        <div class="project-type">参与</div>
+                        <h3>再造康鹭：广州最大的纺织产业片区如何转型升级</h3>
+                        <p>中国专业学位案例中心 · 2023 年 12 月</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 获奖 -->
-    <section id="awards" class="section">
-        <div class="container">
-            <h2 class="section-title">荣誉奖励</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <span class="award-icon">🏆</span>
-                    <h3>第五届发展经济学研究生论文大赛二等奖</h3>
-                    <p>2025年7月 博士生组</p>
+        <section id="awards" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Honors</p>
+                    <h2 class="section-title">荣誉奖励</h2>
                 </div>
-                <div class="award-card">
-                    <span class="award-icon">📋</span>
-                    <h3>城中村改造相关财税政策及其影响研究</h3>
-                    <p>2024年12月 三等奖课题激励</p>
-                </div>
-                <div class="award-card">
-                    <span class="award-icon">📖</span>
-                    <h3>中山大学博士研究生一等奖学金</h3>
-                    <p>2022-2025年</p>
-                </div>
-                <div class="award-card">
-                    <span class="award-icon">🎓</span>
-                    <h3>研究生暑期学校优秀论文</h3>
-                    <p>2023年8月 "新发展阶段的应用经济学"</p>
+                <div class="awards-grid">
+                    <article class="award-card reveal">
+                        <span class="award-index">01</span>
+                        <h3>中山大学 2026 届优秀毕业生</h3>
+                        <p>2026 年 5 月 · 全院唯一博士生</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">02</span>
+                        <h3>第五届发展经济学研究生论文大赛二等奖</h3>
+                        <p>2025 年 7 月 · 博士生组</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">03</span>
+                        <h3>中山大学博士研究生一等奖学金</h3>
+                        <p>2022 - 2025 年</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">04</span>
+                        <h3>研究生暑期学校博士生优秀论文</h3>
+                        <p>2023 年 8 月 · “新发展阶段的应用经济学”</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">05</span>
+                        <h3>广东外语外贸大学国际商务硕士专项学业奖学金</h3>
+                        <p>2022 年 6 月 · 全院唯一</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">06</span>
+                        <h3>广东外语外贸大学硕士研究生一等综合奖学金</h3>
+                        <p>2020 年、2021 年</p>
+                    </article>
+                    <article class="award-card reveal">
+                        <span class="award-index">07</span>
+                        <h3>国际商务案例分析大赛校级二等奖</h3>
+                        <p>2021 年 7 月 · 一等奖空缺</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 会议报告与学术活动 -->
-    <section id="conferences" class="section">
-        <div class="container">
-            <h2 class="section-title">会议报告与学术活动</h2>
-            <div class="conferences-list">
-                <div class="conference-item">
-                    <span class="conf-year">2025</span>
-                    <div class="conf-content">
-                        <h4>第十一届中国财政学论坛</h4>
-                        <p>中南财经政法大学 · 湖北武汉</p>
-                    </div>
+        <section id="conferences" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Talks</p>
+                    <h2 class="section-title">会议报告与学术活动</h2>
                 </div>
-                <div class="conference-item">
-                    <span class="conf-year">2025</span>
-                    <div class="conf-content">
-                        <h4>第十届财政学博士生创新论坛</h4>
-                        <p>西南财经大学 · 四川成都</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2025</span>
-                    <div class="conf-content">
-                        <h4>2025年留美经济学年会</h4>
-                        <p>中山大学 · 广东广州</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2025</span>
-                    <div class="conf-content">
-                        <h4>第五届发展经济学研究生论文大赛（获二等奖）</h4>
-                        <p>华中科技大学 · 湖北武汉</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2024</span>
-                    <div class="conf-content">
-                        <h4>第十届"中国财政学"论坛</h4>
-                        <p>西南财经大学 & 《经济研究》杂志社 · 四川成都</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2024</span>
-                    <div class="conf-content">
-                        <h4>第十届组织经济学讨论会</h4>
-                        <p>广州大学 · 广东广州</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2024</span>
-                    <div class="conf-content">
-                        <h4>第二届"地方政府高质量发展论坛"</h4>
-                        <p>中山大学岭南学院 · 广东广州</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2024</span>
-                    <div class="conf-content">
-                        <h4>中国青年经济学家联谊会（YES）2024年会</h4>
-                        <p>西北大学 · 陕西西安</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2023</span>
-                    <div class="conf-content">
-                        <h4>第九届"中国财政学"论坛</h4>
-                        <p>中央财经大学 & 《经济研究》杂志社 · 北京</p>
-                    </div>
-                </div>
-                <div class="conference-item">
-                    <span class="conf-year">2023</span>
-                    <div class="conf-content">
-                        <h4>中国青年经济学家联谊会（YES）2023年会</h4>
-                        <p>云南大学 · 云南昆明</p>
-                    </div>
+                <div class="conferences-list">
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2025</span>
+                        <div class="conf-content">
+                            <h4>第十一届中国财政学论坛</h4>
+                            <p>中南财经政法大学 · 湖北武汉</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2025</span>
+                        <div class="conf-content">
+                            <h4>第十届财政学博士生创新论坛</h4>
+                            <p>西南财经大学 · 四川成都</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2025</span>
+                        <div class="conf-content">
+                            <h4>2025 年留美经济学年会</h4>
+                            <p>中山大学 · 广东广州</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2025</span>
+                        <div class="conf-content">
+                            <h4>第五届发展经济学研究生论文大赛（获二等奖）</h4>
+                            <p>华中科技大学 · 湖北武汉</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2024</span>
+                        <div class="conf-content">
+                            <h4>第十届“中国财政学”论坛</h4>
+                            <p>西南财经大学 &amp; 《经济研究》杂志社 · 四川成都</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2024</span>
+                        <div class="conf-content">
+                            <h4>第十届组织经济学讨论会</h4>
+                            <p>广州大学 · 广东广州</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2024</span>
+                        <div class="conf-content">
+                            <h4>第二届“地方政府高质量发展论坛”</h4>
+                            <p>中山大学岭南学院 · 广东广州</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2024</span>
+                        <div class="conf-content">
+                            <h4>中国青年经济学家联谊会（YES）2024 年会</h4>
+                            <p>西北大学 · 陕西西安</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2023</span>
+                        <div class="conf-content">
+                            <h4>第九届“中国财政学”论坛</h4>
+                            <p>中央财经大学 &amp; 《经济研究》杂志社 · 北京</p>
+                        </div>
+                    </article>
+                    <article class="conference-item reveal">
+                        <span class="conf-year">2023</span>
+                        <div class="conf-content">
+                            <h4>中国青年经济学家联谊会（YES）2023 年会</h4>
+                            <p>云南大学 · 云南昆明</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 联系方式 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>gaohan@mail2.sysu.edu.cn</span>
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">Contact</p>
+                    <h2 class="section-title">联系我</h2>
+                </div>
+                <div class="contact-content">
+                    <a class="contact-item reveal" href="mailto:gaoh59@mail2.sysu.edu.cn">
+                        <span class="contact-label">Email</span>
+                        <span>gaoh59@mail2.sysu.edu.cn</span>
+                    </a>
+                    <div class="contact-item reveal">
+                        <span class="contact-label">Office</span>
+                        <span>广东省广州市海珠区中山大学南校园善衡堂 S211</span>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <span>广东省广州市海珠区中山大学南校园善衡堂S211</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📕</span>
-                        <span><a href="https://xhslink.com/m/1DqyDeu3FSS" target="_blank">小红书</a></span>
-                    </div>
+                    <a class="contact-item reveal" href="https://xhslink.com/m/1DqyDeu3FSS" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-label">XHS</span>
+                        <span>小红书</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 页脚 -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 高涵. All rights reserved.</p>
-            <p class="footer-note">最后更新：2024年3月</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 高涵. All rights reserved.</p>
+            <p class="footer-note">最后更新：2026 年 6 月</p>
         </div>
     </footer>
 
