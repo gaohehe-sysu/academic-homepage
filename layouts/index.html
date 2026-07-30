@@ -14,7 +14,7 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ .Site.Title }}</title>
     <link rel="preload" href="{{ "主页背景.JPG" | relURL }}" as="image">
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20260705-life-layout">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20260730-visitor-counter">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -600,10 +600,17 @@
     <footer>
         <div class="container footer-inner">
             <p>&copy; 2026 高涵. All rights reserved.</p>
-            <p class="footer-note">最后更新：2026 年 7 月</p>
+            <div class="footer-meta">
+                <p class="visitor-counter">
+                    <span>总访问量</span>
+                    <strong id="busuanzi_site_pv" aria-live="polite">—</strong>
+                </p>
+                <p class="footer-note">最后更新：2026 年 7 月</p>
+            </div>
         </div>
     </footer>
 
-    <script src="{{ "js/script.js" | relURL }}?v=20260705-life-layout"></script>
+    <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+    <script src="{{ "js/script.js" | relURL }}?v=20260730-visitor-counter"></script>
 </body>
 </html>

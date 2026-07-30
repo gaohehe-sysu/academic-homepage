@@ -971,6 +971,25 @@ footer p {
     opacity: 0.9;
 }
 
+.footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.visitor-counter {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    font-size: 14px;
+}
+
+.visitor-counter strong {
+    min-width: 2ch;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
 .footer-note {
     font-size: 14px;
     opacity: 0.72;
@@ -1210,6 +1229,12 @@ html.js-enabled .reveal.visible {
     .footer-inner {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .footer-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
     }
 }
 
