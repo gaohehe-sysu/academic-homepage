@@ -977,6 +977,13 @@ footer p {
     gap: 18px;
 }
 
+.visitor-counters {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .visitor-counter {
     display: inline-flex;
     align-items: baseline;
@@ -988,6 +995,10 @@ footer p {
     min-width: 2ch;
     color: #fff;
     font-variant-numeric: tabular-nums;
+}
+
+.visitor-counter-divider {
+    opacity: 0.4;
 }
 
 .footer-note {

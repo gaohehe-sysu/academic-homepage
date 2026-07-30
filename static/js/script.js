@@ -387,6 +387,7 @@ const englishText = new Map(Object.entries({
     "小红书": "Xiaohongshu (RED)",
     "© 2026 高涵. All rights reserved.": "© 2026 Gao Han. All rights reserved.",
     "总访问量": "Total visits",
+    "今日访问量": "Today's visits",
     "最后更新：2026 年 7 月": "Last updated: July 2026"
 }).map(([chinese, english]) => [chinese.trim(), english]));
 
