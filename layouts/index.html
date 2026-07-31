@@ -14,7 +14,7 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ .Site.Title }}</title>
     <link rel="preload" href="{{ "主页背景.JPG" | relURL }}" as="image">
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20260730-daily-counter">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20260731-section-navigation">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
 
     <nav class="navbar" aria-label="主导航">
         <div class="nav-container">
-            <a href="#home" class="logo" aria-label="高涵主页">高涵<span class="logo-econ">Econ</span></a>
+            <a href="#about" class="logo" aria-label="高涵主页">高涵<span class="logo-econ">Econ</span></a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航">
                 <span></span>
                 <span></span>
@@ -54,6 +54,7 @@
                 <li><a href="#projects">项目</a></li>
                 <li><a href="#awards">荣誉</a></li>
                 <li><a href="#conferences">会议</a></li>
+                <li><a href="#academic-goods">学术公共品</a></li>
                 <li><a href="#contact">联系</a></li>
                 <li class="language-switcher">
                     <button class="language-toggle" type="button" aria-label="切换至英文版" aria-pressed="false">English</button>
@@ -62,7 +63,7 @@
         </div>
     </nav>
 
-    <header id="home" class="hero">
+    <header id="home" class="hero is-active-view" data-page-view="about">
         <div class="hero-content">
             <p class="hero-kicker">公共经济学 · 城市经济学 · 土地财政</p>
             <div class="avatar">
@@ -94,7 +95,7 @@
     </header>
 
     <main id="main">
-        <section id="about" class="section">
+        <section id="about" class="section is-active-view" data-page-view="about">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">About</p>
@@ -144,7 +145,7 @@
             </div>
         </section>
 
-        <section id="life" class="section section-alt">
+        <section id="life" class="section section-alt" data-page-view="life">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Life</p>
@@ -230,7 +231,7 @@
             </div>
         </section>
 
-        <section id="research" class="section">
+        <section id="research" class="section" data-page-view="research">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Research</p>
@@ -261,7 +262,7 @@
             </div>
         </section>
 
-        <section id="publications" class="section">
+        <section id="publications" class="section" data-page-view="publications">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Papers</p>
@@ -396,7 +397,7 @@
             </div>
         </section>
 
-        <section id="projects" class="section section-alt">
+        <section id="projects" class="section section-alt" data-page-view="projects">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Projects</p>
@@ -432,7 +433,7 @@
             </div>
         </section>
 
-        <section id="awards" class="section">
+        <section id="awards" class="section" data-page-view="awards">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Honors</p>
@@ -478,7 +479,7 @@
             </div>
         </section>
 
-        <section id="conferences" class="section section-alt">
+        <section id="conferences" class="section section-alt" data-page-view="conferences">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Talks</p>
@@ -573,7 +574,38 @@
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="academic-goods" class="section section-alt" data-page-view="academic-goods">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-eyebrow" data-no-translate>Academic Resources</p>
+                    <h2 class="section-title">学术公共品</h2>
+                </div>
+                <div class="academic-goods-intro">
+                    <h3>阅读笔记</h3>
+                    <p>这里整理了我的论文阅读笔记，欢迎按需下载 PDF。</p>
+                </div>
+                <div class="reading-notes-grid">
+                    {{ range readDir "学术公共品/阅读笔记" }}
+                        {{ if and (not .IsDir) (eq (lower (path.Ext .Name)) ".pdf") }}
+                            {{ $notePath := printf "学术公共品/阅读笔记/%s" .Name }}
+                            {{ $noteTitle := replaceRE "(?i)\\.pdf$" "" .Name }}
+                            <article class="reading-note-card reveal">
+                                <span class="reading-note-type" aria-hidden="true">PDF</span>
+                                <div class="reading-note-content">
+                                    <h3 data-no-translate>{{ $noteTitle }}</h3>
+                                    <p>PDF 阅读笔记</p>
+                                </div>
+                                <a class="reading-note-download" href="{{ $notePath | relURL }}" download="{{ .Name }}" aria-label="下载 {{ $noteTitle }} PDF">
+                                    下载 PDF
+                                </a>
+                            </article>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" data-page-view="contact">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-eyebrow">Contact</p>
@@ -618,6 +650,6 @@
     </footer>
 
     <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
-    <script src="{{ "js/script.js" | relURL }}?v=20260730-daily-counter"></script>
+    <script src="{{ "js/script.js" | relURL }}?v=20260731-section-navigation"></script>
 </body>
 </html>

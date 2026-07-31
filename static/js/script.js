@@ -3,10 +3,13 @@ document.documentElement.classList.add('js-enabled');
 const navbar = document.querySelector('.navbar');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-const sections = document.querySelectorAll('header[id], main section[id]');
+const pageLinks = document.querySelectorAll('.nav-links a[href^="#"], .logo[href^="#"], .hero-actions a[href^="#"]');
+const pagePanels = document.querySelectorAll('[data-page-view]');
+const pageIds = new Set(Array.from(pagePanels, (panel) => panel.dataset.pageView));
 const languageToggle = document.querySelector('.language-toggle');
 const initialLanguage = 'zh';
 let activeLanguage = 'zh';
+let activePageId = 'about';
 
 function setNavState() {
     if (!navbar) return;
@@ -25,15 +28,59 @@ navToggle?.addEventListener('click', () => {
     setNavToggleLabel(isOpen);
 });
 
-navLinks.forEach((anchor) => {
+function pageIdFromLocation() {
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    if (hash === 'home') return 'about';
+    return pageIds.has(hash) ? hash : 'about';
+}
+
+function showPage(pageId, { updateHistory = false, smooth = false } = {}) {
+    const nextPageId = pageIds.has(pageId) ? pageId : 'about';
+    activePageId = nextPageId;
+
+    pagePanels.forEach((panel) => {
+        const isActive = panel.dataset.pageView === nextPageId;
+        panel.hidden = !isActive;
+        panel.classList.toggle('is-active-view', isActive);
+        panel.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${nextPageId}`;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+
+    if (updateHistory) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.hash = nextPageId === 'about' ? '' : nextPageId;
+        window.history.pushState({ page: nextPageId }, '', nextUrl);
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'auto'
+    });
+}
+
+pageLinks.forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (!target) return;
+        const pageId = anchor.getAttribute('href').slice(1);
+        if (!pageIds.has(pageId)) return;
 
         event.preventDefault();
         closeNav();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        showPage(pageId, { updateHistory: true, smooth: true });
     });
+});
+
+window.addEventListener('popstate', () => {
+    closeNav();
+    showPage(pageIdFromLocation());
 });
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -52,29 +99,9 @@ document.querySelectorAll('.reveal').forEach((element) => {
     revealObserver.observe(element);
 });
 
-const navObserver = new IntersectionObserver((entries) => {
-    const visibleSections = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-    if (!visibleSections.length) return;
-
-    const activeId = visibleSections[0].target.id;
-    navLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
-    });
-}, {
-    threshold: [0.16, 0.32, 0.56],
-    rootMargin: '-84px 0px -55% 0px'
-});
-
-sections.forEach((section) => {
-    navObserver.observe(section);
-});
-
 window.addEventListener('scroll', setNavState, { passive: true });
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) closeNav();
+    if (window.innerWidth > 960) closeNav();
 });
 
 function updateLifePhotoOrientation() {
@@ -382,6 +409,11 @@ const englishText = new Map(Object.entries({
     "中央财经大学 & 《经济研究》杂志社 · 北京": "Central University of Finance and Economics & Economic Research Journal · Beijing",
     "中国青年经济学家联谊会（YES）2023 年会": "2023 Annual Meeting of the Young Economists Society (YES)",
     "云南大学 · 云南昆明": "Yunnan University · Kunming, Yunnan",
+    "学术公共品": "Academic Resources",
+    "阅读笔记": "Reading Notes",
+    "这里整理了我的论文阅读笔记，欢迎按需下载 PDF。": "This collection contains my paper reading notes, available to download as PDFs.",
+    "PDF 阅读笔记": "PDF Reading Note",
+    "下载 PDF": "Download PDF",
     "联系我": "Contact Me",
     "广东省广州市海珠区中山大学南校园善衡堂 S211": "Room S211, Shanheng Hall, South Campus, Sun Yat-sen University, Haizhu District, Guangzhou, Guangdong, China",
     "小红书": "Xiaohongshu (RED)",
@@ -453,8 +485,8 @@ function updateLocalizedAttributes(language) {
     document.querySelector('.profile-card')?.setAttribute('aria-label', isEnglish ? 'Education' : '教育背景');
 
     const navigationLabels = isEnglish
-        ? { '#about': 'About', '#life': 'Life', '#research': 'Research', '#publications': 'Papers', '#projects': 'Projects', '#awards': 'Honors', '#conferences': 'Talks', '#contact': 'Contact' }
-        : { '#about': '关于', '#life': '生活', '#research': '研究', '#publications': '论文', '#projects': '项目', '#awards': '荣誉', '#conferences': '会议', '#contact': '联系' };
+        ? { '#about': 'About', '#life': 'Life', '#research': 'Research', '#publications': 'Papers', '#projects': 'Projects', '#awards': 'Honors', '#conferences': 'Talks', '#academic-goods': 'Resources', '#contact': 'Contact' }
+        : { '#about': '关于', '#life': '生活', '#research': '研究', '#publications': '论文', '#projects': '项目', '#awards': '荣誉', '#conferences': '会议', '#academic-goods': '学术公共品', '#contact': '联系' };
     navLinks.forEach((link) => {
         link.textContent = navigationLabels[link.getAttribute('href')];
     });
@@ -464,6 +496,14 @@ function updateLocalizedAttributes(language) {
         : ['公共经济学', '城市经济学', '文本分析', '数字方法'];
     document.querySelectorAll('.research-card h3').forEach((heading, index) => {
         heading.textContent = researchLabels[index];
+    });
+
+    document.querySelectorAll('.reading-note-download').forEach((link) => {
+        const noteTitle = link.closest('.reading-note-card')?.querySelector('h3')?.textContent?.trim() || '';
+        link.setAttribute(
+            'aria-label',
+            isEnglish ? `Download ${noteTitle} PDF` : `下载 ${noteTitle} PDF`
+        );
     });
 
     if (languageToggle) {
@@ -498,3 +538,4 @@ if (currentUrl.searchParams.has('lang')) {
 
 setNavState();
 setLanguage(initialLanguage);
+showPage(pageIdFromLocation());

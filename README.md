@@ -32,3 +32,4 @@ hugo --minify
 - `static/assets/avatar.jpg`：头像
 - `static/主页背景.JPG`：首页背景图
 - `static/高涵简历最新.pdf`：简历下载文件
+- `学术公共品/阅读笔记/`：公开下载的 PDF 阅读笔记

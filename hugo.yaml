@@ -16,3 +16,10 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: 学术公共品
+      target: static/学术公共品

@@ -368,6 +368,15 @@ strong {
     padding: 92px 0;
 }
 
+.js-enabled [data-page-view]:not(.is-active-view),
+[data-page-view][hidden] {
+    display: none !important;
+}
+
+main > .section.is-active-view {
+    min-height: calc(100vh - 72px);
+}
+
 .section-alt {
     background: var(--bg-soft);
 }
@@ -922,6 +931,103 @@ strong {
     margin-bottom: 4px;
 }
 
+.academic-goods-intro {
+    max-width: 760px;
+    margin: -22px auto 34px;
+    text-align: center;
+}
+
+.academic-goods-intro h3 {
+    margin-bottom: 8px;
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.academic-goods-intro p {
+    color: var(--text-gray);
+}
+
+.reading-notes-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.reading-note-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+        "type content"
+        "type download";
+    align-items: start;
+    gap: 12px 16px;
+    min-height: 168px;
+    padding: 22px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow-subtle);
+}
+
+.reading-note-type {
+    grid-area: type;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    min-height: 64px;
+    border-radius: 8px;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.reading-note-content {
+    grid-area: content;
+    min-width: 0;
+}
+
+.reading-note-content h3 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.reading-note-content p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.reading-note-download {
+    grid-area: download;
+    width: fit-content;
+    padding: 7px 12px;
+    border: 1px solid rgba(24, 63, 78, 0.24);
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.reading-note-download:hover,
+.reading-note-download:focus-visible {
+    border-color: var(--accent-color);
+    background: rgba(179, 86, 66, 0.08);
+    color: var(--accent-color);
+    outline: none;
+}
+
 .contact-content {
     max-width: 760px;
     margin: 0 auto;
@@ -1053,6 +1159,60 @@ html.js-enabled .reveal.visible {
     }
 }
 
+@media (max-width: 960px) {
+    .nav-container {
+        min-height: 64px;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+        max-height: calc(100dvh - 64px);
+        padding: 14px;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 18px 34px rgba(18, 41, 49, 0.12);
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+
+    body.nav-open .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        min-height: 44px;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .language-switcher {
+        grid-column: 1 / -1;
+        margin: 4px 0 0;
+        justify-content: center;
+    }
+
+    .language-toggle {
+        min-height: 40px;
+        min-width: 108px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     html {
         scroll-padding-top: 72px;
@@ -1146,7 +1306,8 @@ html.js-enabled .reveal.visible {
     }
 
     .research-grid,
-    .awards-grid {
+    .awards-grid,
+    .reading-notes-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1250,6 +1411,10 @@ html.js-enabled .reveal.visible {
 }
 
 @media (max-width: 430px) {
+    .nav-links {
+        grid-template-columns: 1fr;
+    }
+
     .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
@@ -1269,6 +1434,17 @@ html.js-enabled .reveal.visible {
 
     .about-portrait {
         padding: 0;
+    }
+
+    .reading-note-card {
+        grid-template-columns: 44px minmax(0, 1fr);
+        padding: 18px;
+    }
+
+    .reading-note-type {
+        width: 44px;
+        min-height: 56px;
+        font-size: 11px;
     }
 }
 
