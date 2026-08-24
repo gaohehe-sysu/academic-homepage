@@ -410,6 +410,16 @@ const englishText = new Map(Object.entries({
     "中国青年经济学家联谊会（YES）2023 年会": "2023 Annual Meeting of the Young Economists Society (YES)",
     "云南大学 · 云南昆明": "Yunnan University · Kunming, Yunnan",
     "学术公共品": "Academic Resources",
+    "我为经济学研究工作流编写的 AI Skills，覆盖文献阅读、综述写作、政策分析、现实案例以及图表制作。": "AI Skills I created for economics research workflows, covering paper reading, literature reviews, policy analysis, real-world cases, and figure and table production.",
+    "在 GitHub 查看全部 Skills": "View all Skills on GitHub",
+    "为经济学论证搜集现实案例、媒体报道与政策材料，并将其与学术证据整合。": "Find real-world cases, media reports, and policy materials for economics arguments and integrate them with academic evidence.",
+    "创建、修改与检查适合论文发表的经济学图形及绘图代码。": "Create, revise, and audit publication-ready economics figures and plotting code.",
+    "创建、修改与检查期刊级经济学表格及结果导出代码。": "Create, revise, and audit journal-ready economics tables and result-export code.",
+    "快速批量浏览多篇论文，生成结构化概览与研究启发。": "Rapidly review multiple papers and generate structured overviews and research insights.",
+    "搜集、核验并综合学术文献，撰写带有真实 DOI 和 APA 7 引用的文献综述。": "Collect, verify, and synthesize academic sources into literature reviews with real DOIs and APA 7 citations.",
+    "深度解析单篇经济学论文，生成结构化中文阅读笔记。": "Analyze an economics paper in depth and generate structured Chinese reading notes.",
+    "系统解读政策文本，提炼关键词并识别经济学研究方向。": "Systematically analyze policy documents, extract key terms, and identify economics research directions.",
+    "查看 Skill": "View Skill",
     "阅读笔记": "Reading Notes",
     "这里整理了我的论文阅读笔记，欢迎按需下载 PDF。": "This collection contains my paper reading notes, available to download as PDFs.",
     "PDF 阅读笔记": "PDF Reading Note",
@@ -503,6 +513,14 @@ function updateLocalizedAttributes(language) {
         link.setAttribute(
             'aria-label',
             isEnglish ? `Download ${noteTitle} PDF` : `下载 ${noteTitle} PDF`
+        );
+    });
+
+    document.querySelectorAll('.ai-skill-link').forEach((link) => {
+        const skillTitle = link.closest('.ai-skill-card')?.querySelector('h3')?.textContent?.trim() || '';
+        link.setAttribute(
+            'aria-label',
+            isEnglish ? `View ${skillTitle} Skill on GitHub` : `在 GitHub 查看 ${skillTitle} Skill`
         );
     });
 
