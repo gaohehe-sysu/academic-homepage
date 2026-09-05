@@ -767,8 +767,10 @@ main > .section.is-active-view {
 .pub-year {
     width: fit-content;
     min-width: 62px;
-    height: 32px;
-    padding: 0 10px;
+    min-height: 32px;
+    max-width: 100%;
+    height: auto;
+    padding: 6px 10px;
     border-radius: 6px;
     background: rgba(179, 86, 66, 0.1);
     color: var(--accent-color);
@@ -777,7 +779,10 @@ main > .section.is-active-view {
     justify-content: center;
     font-size: 14px;
     font-weight: 800;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .working-papers .pub-year {
