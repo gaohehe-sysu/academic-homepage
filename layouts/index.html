@@ -14,7 +14,7 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ .Site.Title }}</title>
     <link rel="preload" href="{{ "主页背景.JPG" | relURL }}" as="image">
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20260824-ai-skills">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ crypto.SHA256 (readFile "static/css/style.css") }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -720,6 +720,6 @@
     </footer>
 
     <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
-    <script src="{{ "js/script.js" | relURL }}?v=20260824-ai-skills"></script>
+    <script src="{{ "js/script.js" | relURL }}?v={{ crypto.SHA256 (readFile "static/js/script.js") }}"></script>
 </body>
 </html>
